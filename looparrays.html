@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const game = ["rock", "paper", "siscors"];
+        // for(let i=0; i < game.length; i++){
+        //     console.log(game[i]);
+        // }     
+        // new for loop to get value of single dimension array    
+        // for(const item of game){
+        //     console.log(item);
+        // }
+
+        const twoDArray = [
+            [1,2,3],
+            [4,5,6],
+            [7,8,9]
+        ];
+
+        // old method to get value of two dimension array 
+        // for(let i = 0; i < twoDArray.length; i++)
+        // {
+        //     for(let j = 0; j < twoDArray[i].length; j++){
+        //         console.log(twoDArray[i][j]);
+        //     }
+        // }
+
+        // for(const arr of twoDArray){
+        //     for(const item of arr){
+        //         console.log(item);
+        //     }
+        // }
+
+        // array methods
+
+        // foreach - does not return anything
+        const numbers = [1,2,3,4,5];
+        console.log("original array: ");
+        console.log(numbers);
+
+        console.log("3 parameters");
+        numbers.forEach( function(item, index, arr){
+            // console.log("item: " + item);
+            // console.log("index: " + index);            
+            // arr[index] = item * 2;
+            console.log("array: " + arr[index]);
+            
+        });
+
+        // console.log(numbers);
+
+        //map - function return a new array
+        const numbersDoubled = numbers.map(function(item){
+            return item * 2
+        });
+        console.log("map function ");
+        console.log(numbers);
+        console.log(numbersDoubled);
+
+        //filter method - 
+        const evenNumbers = numbers.filter(function(item){
+            return item % 2 === 0;
+        });
+        console.log("filter function ");
+        console.log(numbers);
+        console.log(evenNumbers);
+        
+        // copy from mdn site 
+        const words = ['thre','spray', 'elite', 'exuberant', 'destruction', 'present'];
+        const result = words.filter((word) => word.length > 4);
+
+        console.log("Log out result filter number of characters in word");
+        console.log(result);
+        // Expected output: Array ["exuberant", "destruction", "present"]
+
+
+    </script>
+    
+</body>
+</html>

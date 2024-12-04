@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>local storage</title>
+</head>
+<body>
+    
+    <form>
+        <input type="text" name="name" id="name" placeholder="name" />
+        <input type="email" name="email" id="email" placeholder="email address" />
+        <input type="date" name="date" id="date" />
+        <input type="submit" value="Submit" />
+    </form>
+    <script>
+        function formHandler(e){
+            e.preventDefault();
+            localStorage.setItem("name", document.getElementById("name").value);
+            localStorage.setItem("email", document.getElementById("email").value);
+            localStorage.setItem("date", document.getElementById("date").value);
+            console.log(localStorage);
+            window.location.replace("./second-localStorage.html");
+        }
+        document.querySelector("input[type='submit']").addEventListener("click",formHandler);
+    </script>
+</body>
+</html>

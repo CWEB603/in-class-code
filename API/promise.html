@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+    <script>
+        const myPromise = new Promise(function(resolve, reject){
+            const randomNumber = Math.random();
+            setTimeout(function(){
+                if(randomNumber > 0.5){
+                    console.log(randomNumber);
+                    resolve("resolved");
+                }else{
+                    console.log(randomNumber);
+                    reject("rejected with error");
+                }
+            },2000);
+        });
+        // console.log(myPromise);
+        function myResolveFunc(response){
+            console.log("resolved",response);
+        }
+
+        function myRejectFunc(response){
+            console.log("reject",response);
+        }
+
+        myPromise.then(myResolveFunc).catch(myRejectFunc);
+
+        function chainFunctions(response){
+            console.log("chain function");
+            return myPromise;
+        }
+
+        myPromise.then(chainFunctions).then(myResolveFunc).catch(myRejectFunc);
+
+        const example = myPromise(myResolveFunc, myRejectFunc);
+        console.log(example);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

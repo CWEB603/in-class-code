@@ -1,0 +1,117 @@
+/* main style */
+body{
+	display: flex;
+	background-color: honeydew;
+}
+h1{
+	color: teal;
+	margin-top: 15vh;
+	margin-left: 5vh;
+	width: 30vw;
+	text-align: center;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* builder */
+fieldset{
+	display: flex;
+	flex-direction: column;
+	width: 30vw;
+	margin: 5vh;
+	padding: 30px;
+	background-color: rgb(254, 255, 250);
+	border: 1px solid teal;
+	border-radius: 15px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: teal;
+}
+legend{
+	font-weight: 900;
+	color: teal;
+}
+input{
+	margin: 5px;
+}
+label {
+	margin-top: 10px;
+}
+input[type="checkbox"]{
+	margin-top: -15px;
+	accent-color: teal;
+}
+input[type="submit"], input[type="button"], input[type="reset"] {
+	width: 30%;
+	background-color: teal;
+	box-shadow: inset 4px 4px 8px rgb(15, 209, 209), inset -4px -4px 8px rgb(1, 79, 79);
+	color: rgb(254, 255, 250);
+	font-weight: 700;
+	border: none;
+	border-radius: 15px;
+	padding: 10px 0;
+	align-self: end;
+}
+input[type="submit"]:active, input[type="button"]:active{
+	box-shadow: inset 4px 4px 8px rgb(1, 79, 79), inset -4px -4px 8px rgb(15, 209, 209);
+}
+.invalid{
+	border-color: tomato;
+}
+div.container {
+	display: flex;
+	justify-content: flex-end;
+}
+fieldset#employmentHistory {
+	display: none;
+}
+
+/* resume */
+div#resume {
+	border: 1px solid grey;
+	background-color: white;
+	width: 50vw;
+	height: 80vh;
+	margin: 10vh auto;
+	overflow: auto;
+	font-family: 'Times New Roman', Times, serif;
+}
+div#resume h2 {
+	text-align: center;
+	margin-bottom: 5px;
+	margin-top: 3rem;
+}
+div#userContact {
+	display: grid;
+	grid-template-columns: 5fr 1fr 5fr;
+	column-gap: 5px;
+	margin: 0 auto;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-align: center;
+	color: darkgrey;
+}
+div.emplyDiv {
+	display: grid;
+	grid-template: 
+		"title title start end"
+		"description description description description";
+	width: 60%;
+	margin: 15px auto;
+}
+.title{
+	grid-area: title;
+	font-weight: 900;
+}
+.start{
+	grid-area: start;
+	text-align: right;
+}
+.start::after{
+	color: darkgray;
+	content: "- ";
+}
+.end{
+	grid-area: end;
+	margin-left: 5px;
+}
+.description{
+	grid-area: description;
+}

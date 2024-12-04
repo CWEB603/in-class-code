@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event hander</title>
+    <script>
+        window.addEventListener("load",()=>{
+            console.log("loaded");
+            function mouseOverPElement(){
+                console.log("moused over p element");
+            }
+            const pElement = document.getElementById("item");
+            
+            pElement.addEventListener("mouseover", mouseOverPElement);
+        
+            pElement.addEventListener("mouseout", function(){
+            console.log("moused out p element");
+            });
+
+            
+
+            document.getElementById("buttonclick").addEventListener("click",
+            ()=>{
+            // console.log(event);
+            console.log(this);
+            let firstNumber = document.getElementById("classNumber1");
+            let secondNumber = document.getElementById("classNumber2");
+            let sum = parseInt(firstNumber.value) + parseInt(secondNumber.value);
+            console.log(sum);
+            document.getElementById("buttonclick").append(`<p>sum of two numbers is ${sum}</p>`);
+
+            });
+            
+        }); 
+
+       
+    </script>
+</head>
+<body>
+    <p id="item">No event here!</p>
+    
+    <div onclick="alert('grandparent')">
+        <div onclick="alert('parent')">
+            <p onclick="alert('grandchild')">grandchild</p>
+        </div>
+    </div>
+
+    
+    <input type="number" name="classNumber1" id="classNumber1" />
+    <input type="number" name="classNumber2" id="classNumber2" />
+
+    <input type="button" value="click" id="buttonclick"/>
+</body>
+</html>

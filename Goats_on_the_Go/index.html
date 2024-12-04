@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Goats on the Go</title>
+    <script src="./js/quote.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header></header>
+        
+        <h2>NO GOATS, NO GLORY!</h2>
+        <p>You're fighting the good fight against noxious weeds, brush, and invasive plant species.  Don't surrender to the use of poisonous herbicides or CO2-spewing equipment.  Stand your ground.  Be a hero. <span>GET GOATS</span>.</p>
+        <div class="formContainer">
+            <h3>Get a Heard:</h3>
+            <form action="">
+                <label for="goatNum">Number of Goats (6-20):</label>
+                <input type="number" name="goatNum" id="goatNum" value=0 />
+                <label for="acre">Acres of Brush:</label>
+                <input type="number" name="acre" id="acre" value=0  />
+                <label for="dog">Include Livestock Guardian Dog:</label>
+                <input type="checkbox" name="dog" id="dog">
+                <label for="distance">Distance from Saskatoon ($2/km):</label>
+                <input type="number" name="distance" id="distance" value=0 />
+            </form>
+            <p class="quote">Goat Quote: <span id="estimate">$</span></p>
+        </div>
+    </div>
+</body>
+</html>

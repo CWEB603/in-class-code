@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Base Styles */
+* {
+	font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+	font-weight: 100;
+}
+main {
+	max-width: 1080px;
+	margin: auto;
+}
+h3 {
+    text-align: center;
+}
+
+/* game layout - battle sceen */
+section.battleScene {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 18vh);
+}
+div.opponent {
+    grid-column: 1 / span 3;
+    border: 3px solid grey;
+    border-radius: 10px;
+    padding-left: 2%;
+}
+img#oppImg {
+    grid-column: 4 / span 3;
+    grid-row: 1 / span 3;
+    width: auto;
+    margin: 0 auto;
+	border-radius: 30px;
+	transform: scale(75%);
+}
+img#playerImg {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 3;
+    max-height: 100%;
+    margin: 0 auto;
+	border-radius: 30px;
+}
+div.player {
+    grid-column: 4 / span 3;
+    border: 3px solid grey;
+    border-radius: 10px;
+    padding-left: 2%;
+}
+div.border {
+	height: 15px;
+	width: 50%;
+	margin: auto;
+	border: 1px solid grey;
+	border-radius: 10px;
+}
+
+/* game layout - player field */
+section.playerField{
+	display: flex;
+	margin-top: 15px;
+}
+section.gameTextBox, section.playerOptions {
+	height: 18vh;
+	flex: 1 1 50%;
+	border: 3px solid grey;
+	border-radius: 10px;
+}
+ section.playerOptions {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+ }
+
+.gameTextBox{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.playagain{
+	opacity: 10;
+	display:none;
+}
+
+.btn {
+	width: 45%;
+	height: 50%;
+	font-size: large;
+}
+
+/* interactive components */
+div#squirtleHPbar {
+	height: 15px;
+	width:100%;
+	background-color: green;
+	border-radius: 10px;
+}
+div#pikachuHPbar {
+	height: 15px;
+	width: 100%;
+	background-color: green;
+	border-radius: 10px;
+}
+.hit{
+	animation: hit;
+	animation-duration: 0.5s;
+}
+@keyframes hit {
+	10% {transform: translateY(10px);}
+	30% {transform: translateY(-20px);}
+	50% {transform: translateY(20px);}
+	70% {transform: translateY(-20px);}
+	90% {transform: translateY(20px);}
+	100% {transform: translateY(-10px);}
+}

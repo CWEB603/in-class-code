@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+    <script>
+        // global variable
+        // "use strict";
+        // declare functions 
+        function myFirestFunction(){
+            console.log("Yahoo!!!!!");
+            console.log("HUUUUUU!!!!");
+        }
+
+        // executable code 
+        myFirestFunction();
+
+        function newFunction(){
+            return "hello";
+        }
+        // alert(newFunction());
+        
+        function thirdFunction(name){
+            alert(`Hello ${name}`);
+        }
+        // thirdFunction("The template literal");
+
+        // const name = "Jennifer";
+        let name = "Jennifer";
+        function trouble(){
+            //older code might work
+            // forToDeclare = 6;
+            const declared = 7;
+
+            // console.log(name);
+
+            const name = "Jen";
+            console.log("should be Jen " + name);
+        }
+
+        //older code might work
+        // console.log(forToDeclare);
+
+        console.log("Should be Jennifer " + name);
+        trouble();
+
+        function addDefault(){
+            
+            document.getElementById("name").innerText = `Hello ${prompt("What is your name? ")}`;
+        }
+    </script>
+</head>
+<body>
+    <p id="name">Your Name here</p>
+    <input type="button" value="add default value" onclick="addDefault()"/>
+</body>
+</html>

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/**** Normalization ****/
+body{
+    margin: 0;
+    background-color: #333333;
+}
+input, label{
+    padding: 0;
+    margin: 0;
+}
+
+/** Header **/
+header{
+    height: 40vh;
+    background-image: url(../img/goat.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/** Base Style **/
+div.container{
+    width: 60%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+h2{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #c9da2b;
+}
+p{
+    text-align: center;
+    margin: 0 15%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+span{
+    font-weight: 900;
+}
+
+/** Form **/
+div.formContainer{
+    border: #0f75bc solid 3px;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+div.formContainer h3{
+    color: #0f75bc;
+    margin-left: 15%;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60%;
+    margin: 0 auto;
+}
+form > label{
+    flex-basis: 70%;
+    text-align: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+form > input[type="number"]{
+    width: 40px;
+    margin-top: 5px;
+}
+p.quote{
+    margin: 20px 0;
+    font-weight: 900;
+    color: #0f75bc;
+}

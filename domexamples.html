@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM example</title>
+</head>
+<body>
+    <h1><span class="name" id="person">Someone</span>'s page! </h1>
+    <p>My favourite animal is <span id="animal">a horse!</span></p>
+
+    <script>
+        let span1 = document.getElementById("person");
+        let span2 = document.querySelector("#person");
+        let span3 = document.querySelectorAll("#person");
+        let span4 = document.getElementsByClassName("name");        
+        console.log("span4");
+        console.log(span4);
+        let span5 = document.getElementsByClassName("name")[0];
+        console.log("span5 is element 0 of span4");
+        console.log(span5);
+        const h1Element = span1.parentNode
+
+        console.log(h1Element);
+        // should not use childNodes 
+        // console.log(document.querySelector("body").childNodes);
+        console.log(document.querySelector("body").children);
+
+        // let pElement = h1Element.nextSibling
+        let pElement = h1Element.nextElementSibling;
+        console.log(pElement);
+
+        const food = document.createElement("p");
+        const foodText = document.createTextNode("My favorite food is sushi!");
+        food.appendChild(foodText);
+
+        const body = document.querySelector("body");
+        body.appendChild(food);
+        body.removeChild(pElement);
+
+        const food1 = document.createElement("p");
+        const foodText1 = document.createTextNode("Welcome to my food blog!");
+        food1.appendChild(foodText1);
+        // body.appendChild(food1);
+        body.insertBefore(foodText1,food);
+
+
+        const newSpan = document.createElement("span");
+        const name = document.createTextNode("Jennifer");
+        newSpan.appendChild(name);
+
+        // h1Element.replaceChild(newSpan, span1);
+
+        // h1Element.id = "newID";
+        // h1Element.style.color = "hotpink";
+        // h1Element.style.backgroundColor = "grey";
+        
+    </script>
+</body>
+</html>

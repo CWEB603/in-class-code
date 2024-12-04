@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies</title>
+</head>
+<body>
+    <script>
+        let stringWithSpaces = encodeURIComponent("Test writer");
+        document.cookie = "name=" + stringWithSpaces;
+        document.cookie = "test=secondValue;expire=Tue, 03 Dec 2024 00:00:00";
+        document.cookie = "name=Test_ter1";
+
+        let later = new Date();
+        later = later.setDate(later.getDate() + 1);
+        later = new Date(later);
+        console.log(later);
+        let time = 60*60*24;
+
+        document.cookie = "tomorrow=textExpire;max-age="+time;
+
+    </script>
+</body>
+</html>

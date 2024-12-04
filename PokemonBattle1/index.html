@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Pokemon Battle!</title>
+    <script src="./js/game.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="battleScene">
+        <div class="opponent">
+          <h2>Squirtle</h2>
+          <div class="border">
+            <div id="squirtleHPbar"></div>
+          </div>
+          <h3>HP: <span id="squirtleHP">48</span> / 48</h3>
+        </div>
+        <!-- squirtle image from: https://totallythebomb.com/pokemon-go-has-made-me-a-better-person -->
+        <img src="./img/squirtle.png" alt="squirtle" id="oppImg" />
+        <!-- pikachu image from: https://www.deviantart.com/amayaxsin/art/Pikachu-s-Back-Shirt-419179226 -->
+        <img src="./img/pikachu-back.png" alt="pikachu" id="playerImg" />
+        <div class="player">
+          <h2>Pikachu</h2>
+          <div class="border">
+            <div id="pikachuHPbar"></div>
+          </div>
+          <h3>HP: <span id="pikachuHP">35</span> / 35</h3>
+        </div>
+      </section>
+      <section class="playerField">
+        <section class="gameTextBox">
+          <h3 id="gameText">What will Pikachu do?</h3>
+          <button class="btn playagain" id="retry">Play again ?</button>
+        </section>
+        <section class="playerOptions">
+          <button class="btn" id="shock">Thunder Shock</button>
+          <button class="btn" id="defense">Defense</button>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
