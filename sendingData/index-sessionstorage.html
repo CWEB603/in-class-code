@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>sending data</title>
+</head>
+<body>
+    
+    <form>
+        <input type="text" name="name" id="name" placeholder="name" />
+        <input type="email" name="email" id="email" placeholder="email address" />
+        <input type="date" name="date" id="date" />
+        <input type="submit" value="Submit" />
+    </form>
+    <script>
+        function formHandler(e){
+            e.preventDefault();
+            sessionStorage.setItem("name", document.getElementById("name").value);
+            sessionStorage.setItem("email", document.getElementById("email").value);
+            sessionStorage.setItem("date", document.getElementById("date").value);
+            console.log(sessionStorage);
+            window.location.replace("./secondSite_sessionStorage.html");
+        }
+        document.querySelector("input[type='submit']").addEventListener("click",formHandler);
+    </script>
+</body>
+</html>

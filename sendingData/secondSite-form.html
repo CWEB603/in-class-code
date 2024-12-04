@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>second file form</title>
+    <script>
+        //get location from window.location to pull out the href
+        let locationinformation = location;
+        //location search give enough info to parse data out, do not need to get full
+        //URI
+        // console.log(locationinformation.search);
+        let query = locationinformation.search.slice(1);
+        query = query.replace("%40", "@");
+        query = query.replace("+", " ");
+        const formData = query.split("&");
+        // console.log(query);
+        const data = {};
+        for( i of formData)
+        {
+            const pairs = i.split("=");
+            data[pairs[0]] = pairs[1];
+        }
+        console.log(data);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

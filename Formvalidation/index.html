@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/buildResume.js" defer ></script>
+	<script src="./js/validateResume.js" defer ></script>
+</head>
+<body>
+    <div>
+        <h1>Online Resum&#233; Builder</h1>
+        <form name="editorContact" >
+            <fieldset id="contact" >
+                <legend>Contact Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Your Name" required />
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="someone@place.ca" required />
+                <label for="phone">Phone Number:</label>
+                <input type="tel" name="phone" id="phone" placeholder="(555)555-5555" required />
+                <input type="submit" value="Next" name="contactNextBtn" />
+            </fieldset>
+        </form>
+        <form name="editorEmployer" >
+            <fieldset id="employmentHistory" >
+                <legend>Employment History</legend>
+                <label for="title">Job Title:</label>
+                <input type="text" name="title" id="title" required />
+                <label for="industry">Industry:</label>
+                <select name="industry" id="industry" required >
+                    <option disabled selected value="-1" > -- select an option -- </option>
+                    <option value="21">Mining</option> 
+                    <option value="23">Construction</option> 
+                    <option value="48-49">Transportation</option> 
+                    <option value="56">Waste Management</option> 
+                    <option value="62">Health Care</option> 
+                    <option value="71">Entertainment</option> 
+                    <option value="81">Legal</option>
+                </select>
+                <label for="description">Job Description (max 120 characters):</label>
+                <textarea name="description" id="description" cols="30" rows="10" maxlength="120" required></textarea>
+                <label for="start">Start Date:</label>
+                <input type="date" name="start" id="start" required />
+                <div id="endDate">
+                    <label for="end">End Date:</label>
+                    <input type="date" name="end" id="end" />
+                </div>
+                <label for="current">Current Employer</label>
+                <input type="checkbox" name="current" id="current" />
+                <input type="reset" value="Reset" name="reset" />
+                <input type="submit" value="Add" name="employAddBtn" />
+            </fieldset>
+        </form>
+    </div>
+    <div id="resume">
+        <h2 id="userName" ></h2>
+        <div id="userContact">
+            <p id="userEmail"></p>
+            <p>|</p>
+            <p id="userPhone"></p>
+        </div>
+    </div>
+</body>
+</html>

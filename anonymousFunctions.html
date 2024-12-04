@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>anonymous function</title>
+    <script>
+        function standardFunction(){
+            console.log(Date.now());
+        }
+        // standardFunction();
+
+        const varFunction = standardFunction;
+        // varFunction();
+
+        // assign function within another function 
+        // setTimeout(varFunction, 1000);
+
+        const newFunctionVariable = function (){
+            console.log("Called on another function!");
+        }
+        newFunctionVariable();
+
+        let count = 0;
+        function timerFunction(){
+            count++;
+            console.log(count);
+        }
+        // const timer = setInterval(timerFunction,1000);
+        // clearInterval(timer);
+
+        // fat arrow function, it is commonly used 
+        // scope inside fat arrow is global 
+        const anotherFunction = ()=>{
+            console.log("fat arrow function");
+        }
+        anotherFunction();
+
+        // anonymous function 
+
+        // function logMessage(message) {
+        //     console.log(message);
+        // }
+
+        // setTimeout(function(){logMessage("hi!")}, 3000);
+
+        // replace anonymous function with 
+
+        setTimeout(()=>{console.log("message");}, 3000);
+
+        // let's make this almost unreadable !!!!
+
+        const unreadable = num => num +1;
+        const readable = function(num){
+            return num + 1;
+        }
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

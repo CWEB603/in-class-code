@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In class code</title>
+</head>
+<body>
+
+    <p>Red</p>
+    <p>Blue</p>
+    <p>Green</p>
+
+    <script>
+        const pElement = document.createElement("article");
+        const textWelcome = document.createTextNode("Welcome ");
+        pElement.appendChild(textWelcome);
+        const span1 = document.createElement("span");
+        const textSpan = document.createTextNode("User!");
+        span1.appendChild(textSpan);
+        pElement.appendChild(span1);
+
+        // const userSpan = prompt("Type in your name, please!");
+        const userSpan = "Xu An";
+        const textSpan2 = document.createTextNode(userSpan + "!");
+        const span2 = document.createElement("span");
+        span2.appendChild(textSpan2);
+
+        const body = document.querySelector("body");
+        body.appendChild(pElement);
+        
+        pElement.replaceChild(span2, span1);
+
+        const colorTable = ['red', 'green', 'blue'];
+        colorTable.forEach((item, index) => {console.log(item + index)});
+
+        let count = 0;
+        // let pTags = Array.from(document.getElementsByTagName("p"));
+        let pTags = document.getElementsByTagName("p");
+        console.log(pTags);
+        colorTable.forEach((item, index) => {
+            pTags[index].style.color = item;
+        })
+        console.log(typeof(pTags));
+        
+        
+    </script>
+
+    
+</body>
+</html>
