@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>Hello <span id="findMe"> World!</span></p>
+    <p>second paragraph</p>
+    
+    <script>
+        document.getElementById("findMe").style.color = "green";
+        console.log( jQuery("#findMe") );
+        //can simple query using $
+        console.log($("#findMe"));
+
+        $("#findMe").css({
+            "color": "blue",
+            "font-size": "50px",
+            "text-decoration": "underline"
+        });
+
+        const pEls = document.querySelectorAll("p");
+        for(const item of pEls){
+            item.style.backgroundColor = "grey";
+        }
+
+        console.log($("p"));
+        $("p").css(
+            "font-weight", 900
+        );
+
+        const paragraphs = $("p");
+
+        console.log(paragraphs[1]);
+        $(paragraphs[0]).css("border", "2px solid black");
+
+    </script>
+</body>
+</html>
