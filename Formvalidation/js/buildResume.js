@@ -8,6 +8,11 @@ const emailInput = document.editorContact.email;
 const phoneInput = document.editorContact.phone;
 const contactNextButton = document.editorContact.contactNextBtn;
 
+// list of elements of the display div
+const userNameResume = document.getElementById("userName");
+const userEmailResume = document.getElementById("userEmail");
+const userPhoneResume = document.getElementById("userPhone");
+
 // list of elements of second form
 const titleInput = document.editorEmployer.title;
 const descriptionInput = document.editorEmployer.description;
@@ -18,14 +23,10 @@ const endDateDiv = document.getElementById("endDate");
 const addEmploymentButton = document.editorEmployer.employAddBtn;
 const resetFormButton = document.editorEmployer.reset;
 
-// list of elements of the display div
-const userNameResume = document.getElementById("userName");
-const userEmailResume = document.getElementById("userEmail");
-const userPhoneResume = document.getElementById("userPhone");
 
 function nextMenu(event){
     //remove default behaviour of the event
-    event.preventDefault();
+    // event.preventDefault();
     document.editorContact.style.display = "none";
     // document.editorEmployer.style.display = "flex";
     document.getElementById("employmentHistory").style.display = "flex";
@@ -122,3 +123,4 @@ currentEmployerCheck.addEventListener("change", checkcurrentEmployer);
 addEmploymentButton.addEventListener("click", addEmployment);
 
 nameInput.focus();
+
