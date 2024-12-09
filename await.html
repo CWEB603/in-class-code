@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>await</title>
+    <script>
+        const myPromise = new Promise(function(resolve, reject){
+            const randNum = Math.random();
+            setTimeout(function(){
+                if(randNum > 0.5){
+                    resolve("resolve");
+                }else{
+                    reject("reject");
+                }
+            },2000);
+
+        });
+
+        // const test = await myPromise; -- this call is not allowed
+
+        async function doStuff(){
+            const test = await myPromise;
+            console.log(test);
+        }
+
+        doStuff();
+
+        //API Example
+
+        async function callAPI(){
+            const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+            const data = await response.json();
+            console.log(data);
+        }
+        callAPI();
+
+        //same as 
+        fetch("https://pokeapi.co/api/v2/pokemon/").then(function(response){
+            return response.json();
+        }).then(function(data){
+            console.log(data);
+        });
+
+        
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
