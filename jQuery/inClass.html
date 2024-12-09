@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>in class work</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad atque quaerat corporis praesentium quibusdam sapiente. Odit facilis vero laudantium velit, tenetur sequi, esse iure vel, similique deleniti ullam assumenda ipsum.</p>
+    <p id="quote">Ipsa quisquam minima nihil a? Natus quod, eveniet eaque, unde officiis quae iure quidem veniam totam ratione ea dolore tenetur incidunt, explicabo suscipit facere? Suscipit laboriosam natus pariatur iusto doloribus!</p>
+    <p>Mollitia voluptatibus, fuga eveniet quibusdam consectetur aperiam quasi atque provident earum, quidem nulla sapiente quis! Magnam, quidem. Reiciendis rem repellat rerum molestiae quibusdam, reprehenderit cum. Atque quam fugiat illum repellendus?</p>
+    <input type="button" id="changeStyle" value="StyleQuote">
+
+    <script>
+        function styleQuote(){
+            $("#quote").css(
+            {
+                "text-align":"center",
+                "font-weight": "bold",
+                "font-size": "24px",
+                "color": "green"
+            }
+            );
+        }
+
+        $("input").click(styleQuote);
+        // document.getElementById("changeStyle").addEventListener("click",styleQuote);
+    </script>
+</body>
+</html>
