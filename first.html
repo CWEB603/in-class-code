@@ -14,8 +14,24 @@
         */
         document.write("<h1>Hello World!</h1>");
         console.log("Hello Log!");
-        let userName = prompt("what is your name?");
-        document.write("<p>Hello " + userName + "</p>");
+        // let userName = prompt("what is your name?");
+        // document.write("<p>Hello " + userName + "</p>");
+        const startTime = Date.now();
+        const startTime1 = new Date();
+        function differentTime(){
+            const endTime = Date.now();
+            console.log(startTime);
+            console.log(endTime);
+            // console.log(endTime.getSeconds() - startTime.getSeconds());
+            console.log((endTime - startTime)/1000);
+            console.log("new way");
+            console.log(Math.floor(endTime - startTime)/1000);
+        }
+        setTimeout(differentTime,3500);
+        setTimeout(function(){
+            console.log("Using getseconds method");
+            console.log(new Date().getSeconds() - startTime1.getSeconds());
+        },4500);
     </script>
 </head>
 <body>

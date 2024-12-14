@@ -3,13 +3,36 @@
 const sections = document.querySelectorAll("section");
 
 function selectSection(){
-    this.style.border = "4px solid green";
+    this.removeEventListener("click", selectSection);
+    if(this.classList.contains("selected")){
+        this.classList.remove("selected");
+        addSelect();
+    }else{
+        this.classList.add("selected");
+        const selectableSections = document.getElementsByClassName("selectable");
+        for (const sec of selectableSections){
+            sec.classList.remove("selectable");
+        }
+    }
 }
 
-for(item of sections)
-{
-    item.addEventListener("click",selectSection);
+
+
+function addSelect(){
+    //add hover color to sections that have children.length > 0
+    for (const sec of sections){
+        if(sec.children.length > 0){
+            sec.classList.add("selectable");
+            sec.addEventListener("click",selectSection);
+        }else{
+            sec.classList.remove("selectable");
+        }
+    }
 }
+
+addSelect();
+
+
 
 /*
 - add and remove a selected class on click
@@ -28,3 +51,4 @@ check if win?
         can we get all div of last section then check length of array?
     
 */
+
