@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+	max-width: 1000px;
+	margin: auto;
+}
+div{
+    display: inline-block;
+    margin: 10px;
+    border: 3px solid grey;
+}
+img {
+    width: calc(25vw - 26px);
+	max-width: 224px;
+}
