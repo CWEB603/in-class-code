@@ -1,7 +1,17 @@
 /* Global variables */
+"use strict";
 const pokeImgSrc = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 let counter = 0;
 const guesses = [];
+const startTime = localStorage.getItem("bestTime");
+const startSecond = new Date();
+let isWin = 0;
+
+if(startTime != null){
+	const displayBestTime = document.querySelector("p");
+	displayBestTime.innerText = `Best time is: ${startTime} seconds`;
+	displayBestTime.style.textAlign = "center";
+}
 
 /**
  * Name.		randomizeArray
@@ -78,7 +88,7 @@ const images = document.querySelectorAll("img");
  * @param 		{Array} 	arrOfImgesToHide 	An array of HTML image references
  */
 function hideImages(arrCards){
-	const arrOfImagesToHide = [];
+	//console.log("hide images",arrCards.length);
 	for(let i = 0; i< arrCards.length; i++){
 		arrCards[i].style.opacity = 0;
 	}
@@ -105,12 +115,28 @@ function checkMatch(){
 		counter = 0;
 		guesses[0].removeEventListener("click",revealCard);
 		guesses[1].removeEventListener("click",revealCard);
+		// console.log("removed listener: ", guesses);
+		// showImage(guesses[1]);
+		isWin++;
+		if(isWin == 8)
+		{
+			const totalTime = (new Date() - startSecond) / 1000;
+			if(startTime == null){
+				localStorage.setItem("bestTime", totalTime);
+			}else if( totalTime < startTime){
+				localStorage.setItem("bestTime", totalTime);
+				document.querySelector("p").innerText = `Best time is: ${totalTime} seconds`;
+			}
+		}
 	}else{
-		counter = 0;
+		
+		// counter = 0;
+		// console.log("reset counter", counter);
 		setTimeout(function(){
+			counter = 0;
 			hideImages(guesses);
 		},1000);
-	}	
+	}
 }
 
 
@@ -118,21 +144,30 @@ function checkMatch(){
 
 /**
  * Name.		revealCard
- * Summary. 	Shows the card player slected for two guesses
+ * Summary. 	Shows the card player selected for two guesses
  * @param 		{event} 	e 		An event sent via an event listener
  */
-function revealCard(){
+function revealCard(e){
 	counter++;
+	// console.log(counter);
+	
 	if(counter < 2){
 		guesses[0] = this;
 		showImage(this);
-	}else if (guesses[0].className === this.className){
+		// console.log(guesses, counter);
+	}else if (counter === 2 && this === guesses[0] ){
 		counter--;
-	}else{
+		// console.log(guesses);
+		// console.log("inside duplicate click", counter);
+	} else if(counter === 2 && this != guesses[0]){
 		guesses[1] = this;
+		showImage(this);
 		checkMatch();
+		// console.log(guesses);
 	}
 }
+
+
 
 setTimeout(function(){
 	hideImages(images);
@@ -141,5 +176,5 @@ setTimeout(function(){
 	}
 },5000);
 
+document.querySelector("#resetGame").addEventListener("click", function(){location.reload();});
 /* CODE TO RUN ON PAGE LOAD */
-

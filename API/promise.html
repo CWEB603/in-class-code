@@ -10,10 +10,10 @@
             setTimeout(function(){
                 if(randomNumber > 0.5){
                     console.log(randomNumber);
-                    resolve("resolved");
+                    resolve("resolved inside myPromise");
                 }else{
                     console.log(randomNumber);
-                    reject("rejected with error");
+                    reject("rejected with error - inside myPromise");
                 }
             },2000);
         });
@@ -23,7 +23,7 @@
         }
 
         function myRejectFunc(response){
-            console.log("reject",response);
+            console.log("reject:",response);
         }
 
         myPromise.then(myResolveFunc).catch(myRejectFunc);
@@ -35,8 +35,8 @@
 
         myPromise.then(chainFunctions).then(myResolveFunc).catch(myRejectFunc);
 
-        const example = myPromise(myResolveFunc, myRejectFunc);
-        console.log(example);
+        const example = new Promise(myResolveFunc, myRejectFunc);
+        console.log("log example",example);
         
     </script>
 </head>
